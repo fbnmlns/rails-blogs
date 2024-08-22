@@ -1,0 +1,50 @@
+<section>
+  <% if user_signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  <% end %>
+  <div class="row gx-5 pt-3">
+    <div class="col">
+      <div>
+        <h1>Articles</h1>
+      </div>
+    </div>
+    <% if user_signed_in? %>
+      <div class="col">
+        <div class="d-flex justify-content-end">
+          <%= link_to new_article_path do %>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-primary mx-3">
+                <i class="bi bi-plus-lg"></i> New article
+              </button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <div class="col">
+        <div class="d-flex justify-content-end">
+          <%= link_to new_user_registration_path do %>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-primary mx-3">
+                <i class="bi bi-plus-lg"></i> Sign Up
+              </button>
+            </div>
+          <% end %>
+          <%= link_to new_user_session_path do %>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-primary mx-3">
+                <i class="bi bi-plus-lg"></i> Log In
+              </button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <hr class="hr" />
+  </div>
+  <div class="d-flex justify-content-center">
+    <% @articles.each do |article| %>
+      <%= render "card", article: article %>
+    <% end %>
+  </div>
+</section>
