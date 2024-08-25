@@ -1,8 +1,7 @@
-<div class="d-flex justify-content-center flex-row">
-  <div class="p-2">
-    <h1>Edit Article</h1>
-    <div class="w-80">
-      <%= render "form", article: @article %>
-    </div>
+<%= render partial: "articles/header" %>
+<div class="d-flex justify-content-center p-2">
+  <div>
+    <h2 class="text-center">Edit Article</h2>
+    <%= render "form", article: @article %>
   </div>
 </div>

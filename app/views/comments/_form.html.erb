@@ -1,9 +1,8 @@
 <%= form_with model: [ article, article.comments.build ] do |form| %>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+  <div class="mb-3">
+    <%= form.text_area(:body, class: "form-control", rows: 3) %>
+  </div>
+  <div class="mb-3">
+    <%= form.submit(class: "btn btn-black btn-sm") %>
+  </div>
 <% end %>
