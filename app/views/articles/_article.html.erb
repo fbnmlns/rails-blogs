@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center">
+  <%= link_to article do %>
+    <div class="card mb-3" style="max-width: 700px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <%= image_tag( article.image, :class => "img-fluid rounded-start", :alt => "...") %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <div class="row mb-3">
+              <div class="col profile-picture-container-sm">
+                <img class="rounded-circle img-fluid" alt="avatar1" src="https://i.pinimg.com/564x/30/12/b2/3012b259c2906cdb092bff71ff5c7e63.jpg" />
+              </div>
+              <div class="col p-0">
+                <p class="card-text"><small><%= article.user.first_name %> <%= article.user.last_name %></small></p>
+              </div>
+            </div>
+            <h5 class="card-title"><%= article.title %></h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary"><%= article.subtitle %></h6>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
